@@ -33,21 +33,37 @@ namespace APS_5.Forms
             {
                 Telas.telaChat = new TelaChat();
                 Telas.telaChat.Show();
+    
                 Telas.telaInicial.Close(true);
             }
             else {
                 MessageBox.Show("Nome ou IP inválido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+         
+
         }
+        private void Form1_Click(object sender, KeyEventArgs e)
+        {
+
+        }
+
 
         private void TelaInicial_Load(object sender, EventArgs e)
         {
-
+         
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -71,7 +87,14 @@ namespace APS_5.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button2.BackColor = Color.Black;
+           // button2.BackColor = Color.Black;
+            MessageBox.Show("-Não é pemitido o uso de espaço nos nomes \n-Utilize IPV4", "Ajuda", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Telas.telaCreditos = new TelaCreditos();
+            Telas.telaCreditos.Show();
         }
          
     }
